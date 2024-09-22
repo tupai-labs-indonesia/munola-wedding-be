@@ -17,6 +17,7 @@ final class CorsMiddleware implements MiddlewareInterface
 
         $header = respond()->getHeader();
         $header->set('Access-Control-Allow-Origin', '*');
+        $header->set('Access-Control-Allow-Origin', 'https://staging.munola.com');
         $header->set('Access-Control-Expose-Headers', 'Authorization, Content-Type, Cache-Control, Content-Disposition');
 
         $vary = $header->has('Vary') ? explode(', ', $header->get('Vary')) : [];
