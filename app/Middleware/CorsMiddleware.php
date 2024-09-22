@@ -27,7 +27,7 @@ final class CorsMiddleware implements MiddlewareInterface
             return $next($request);
         }
 
-        $header->unset('Content-Type');
+        // $header->unset('Content-Type');
 
         if (!$request->server->has('HTTP_ACCESS_CONTROL_REQUEST_METHOD')) {
             return respond()->setCode(Respond::HTTP_NO_CONTENT);
