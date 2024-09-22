@@ -13,7 +13,6 @@ final class CorsMiddleware implements MiddlewareInterface
     {
         $header = respond()->getHeader();
         $header->set('Access-Control-Allow-Origin', '*'); // Ganti dengan origin yang sesuai
-        $header->set('Access-Control-Allow-Origin', 'https://staging.munola.com'); // Ganti dengan origin yang sesuai
         $header->set('Access-Control-Expose-Headers', 'Authorization, Content-Type, Cache-Control, Content-Disposition');
 
         // Set header Vary
