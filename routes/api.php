@@ -3,6 +3,7 @@
 use App\Controllers\Api\AuthController;
 use App\Controllers\Api\CommentController;
 use App\Controllers\Api\DashboardController;
+use App\Controllers\Api\InviteeController;
 use App\Middleware\AuthMiddleware;
 use App\Middleware\DashboardMiddleware;
 use Core\Routing\Route;
@@ -15,6 +16,14 @@ use Core\Routing\Route;
 Route::prefix('/session')->group(function () {
     Route::post('/', [AuthController::class, 'login']);
     Route::options('/'); // Preflight request [/api/session]
+});
+
+Route::prefix('/invitee')->group(function () {
+
+    Route::controller(InviteeController::class)->group(function () {
+        Route::get('/', 'get');
+        Route::post('/', 'create');
+    });
 });
 
 Route::middleware(AuthMiddleware::class)->group(function () {
@@ -63,4 +72,6 @@ Route::middleware(AuthMiddleware::class)->group(function () {
             Route::options('/'); // Preflight request [/api/comment/{id}]
         });
     });
+
+
 });
