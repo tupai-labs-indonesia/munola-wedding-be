@@ -70,6 +70,8 @@ Route::middleware(AuthMiddleware::class)->group(function () {
         Route::controller(InviteeController::class)->group(function () {
             Route::get('/', 'get');
             Route::post('/', 'create');
+
+            Route::options('/');
         });
     });
 
