@@ -28,5 +28,20 @@ return new class implements Generator
             'is_filter' => true,
             'access_key' => Hash::rand(25),
         ])->save();
+
+        $user = User::find('ummi@munola.com', 'email');
+
+        if (!$user->exist()) {
+            $user = User::create([
+                'name' => 'Ummi Tary',
+                'email' => 'ummi@munola.com',
+                'password' => Hash::make('emakfikri03')
+            ]);
+        }
+
+        $user->fill([
+            'is_filter' => true,
+            'access_key' => Hash::rand(25),
+        ])->save();
     }
 };
