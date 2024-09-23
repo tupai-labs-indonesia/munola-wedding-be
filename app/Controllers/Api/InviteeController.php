@@ -48,7 +48,7 @@ class InviteeController extends Controller
         $whatsapp = null;
 
         $name = urlencode($name);
-        $inviteeName = str_replace('%20', '_', $request->name);
+        $inviteeName = str_replace(' ', '_', $request->name);
         $inviteeName = str_replace('&', '~', $inviteeName);
         $invitation = "{$request->base_url}?to={$inviteeName}";
         $dahlia = "JEMPUTAN%20-%20UNDANGAN%20PERNIKAHAN%0A%2AVinni%20dan%20Fikri%2A%0A%0AAssalaamu%27alaikum%20Warahmatullaahi%20Wabarakaatuh.%0A%0AKepada%20Yth.%0A%0ABapak%2FIbu%20%2A{$name}%2A%0A%0ADengan%20memohon%20rahmat%20dan%20ridho%20Allah%20SWT%2C%20kami%20bermaksud%20mengundang%20Bapak%2FIbu%2FSaudara%2Fi%20untuk%20hadir%20pada%20acara%20pernikahan%20kami%3A%0A%0AVinniola%20Hijriani%20Nur%20Asy%20Syam%2C%20S.T%0APutri%20dari%20Bapak%20Herrisyam%20dan%20Ibu%20Surani%0A%0A%26%0A%0AMunawir%20Fikri%20Al-akbari%0APutra%20dari%20Bapak%20Dr.%20H.%20M.%20Rizal%20Akbar%2C%20S.Si%2C%20M.Phil%20dan%20Ibu%20Hj.%20Lestary%20Fitriany%2C%20S.T.%2C%20M.E%0A%0AYang%20akan%20dilangsungkan%20pada%3A%0A%0AHari%2FTanggal%3A%20Senin%2C%202%20Desember%202024%0AWaktu%3A%2011.00%20-%20Selesai%0ATempat%3A%20Kediaman%20Mempelai%20Wanita%20%28Jl.%20Mawar%20Gg.%20Dahlia%2C%20Tanjung%20Palas%2C%20Dumai%20Timur%2C%20Dumai%2C%20Riau%2028816%29%0A%0ABerikut%20link%20untuk%20info%20lengkap%20dari%20acara%20kami%3A%C2%A0%0A%2A{$invitation}%2A%0A%0AMerupakan%20suatu%20kehormatan%20dan%20kebahagiaan%20bagi%20kami%20apabila%20Bapak%2FIbu%2FSaudara%2Fi%20berkenan%20hadir%20untuk%20memberikan%20doa%20restu%20kepada%20kedua%20mempelai.%0A%0AAtas%20kehadiran%20dan%20doa%20restunya%2C%20kami%20ucapkan%20terima%20kasih.%0A%0AWassalamu%27alaikum%20Warahmatullahi%20Wabarakatuh.%0A%0A%2AVinni%20dan%20Fikri%2A";
