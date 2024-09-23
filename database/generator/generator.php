@@ -43,5 +43,22 @@ return new class implements Generator
             'is_filter' => true,
             'access_key' => Hash::rand(25),
         ])->save();
+
+        $user = User::find('vinni@munola.com', 'email');
+
+        if (!$user->exist()) {
+            $user = User::create([
+                'name' => 'Vinniola Hijriani',
+                'email' => 'vinni@munola.com',
+                'password' => Hash::make('sayangmun')
+            ]);
+        }
+
+        $user->fill([
+            'is_filter' => true,
+            'access_key' => Hash::rand(25),
+        ])->save();
+
+
     }
 };
